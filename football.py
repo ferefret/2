@@ -19,7 +19,7 @@
 import asyncio
 import logging
 
-from telethon.tl.types import InputMediaDice
+from telethon.tl.types import InputMediaFootball
 
 from .. import loader, utils
 
@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 
 def register(cb):
-    cb(DartsMod())
+    cb(FootballsMod())
 
 
 @loader.tds
@@ -42,8 +42,8 @@ class FootballMod(loader.Module):
     def config_complete(self):
         self.name = self.strings["name"]
 
-    async def dartscmd(self, message):
-        """Rolls a darts (optionally with the specified value)(edited by @mpamop)"""
+    async def footballcmd(self, message):
+        """Rolls a football (optionally with the specified value)(edited by @mpamop)"""
         args = utils.get_args(message)
         values = set()
         try:
